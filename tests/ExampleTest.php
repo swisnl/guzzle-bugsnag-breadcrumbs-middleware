@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace League\Skeleton\Tests;
+namespace Swis\Guzzle\Bugsnag\Tests;
 
 class ExampleTest extends \PHPUnit\Framework\TestCase
 {

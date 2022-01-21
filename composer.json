@@ -1,42 +1,45 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "swisnl/guzzle-bugsnag-breadcrumbs-middleware",
     "type": "library",
-    "description": ":package_description",
+    "description": "Guzzle middleware that logs Bugsnag breadcrumbs",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "swisnl",
+        "guzzle",
+        "middleware",
+        "bugsnag",
+        "breadcrumbs"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/swisnl/guzzle-bugsnag-breadcrumbs-middleware",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Jasper Zonneveld",
+            "email": "jasper@swis.nl",
+            "homepage": "https://github.com/JaZo",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "require-dev": {
-        "phpunit/phpunit" : ">=8.0",
-        "squizlabs/php_codesniffer": "^3.0"
+        "friendsofphp/php-cs-fixer": "^3.5",
+        "phpunit/phpunit" : ">=9.0"
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "Swis\\Guzzle\\Bugsnag\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\Tests\\": "tests"
+            "Swis\\Guzzle\\Bugsnag\\Tests\\": "tests"
         }
     },
     "scripts": {
         "test": "phpunit",
-        "check-style": "phpcs src tests",
-        "fix-style": "phpcbf src tests"
+        "check-style": "php-cs-fixer fix --dry-run -v",
+        "fix-style": "php-cs-fixer fix"
     },
     "extra": {
         "branch-alias": {
