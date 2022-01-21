@@ -110,6 +110,6 @@ This package is [Treeware](https://treeware.earth). If you use it in production,
 [link-code-quality]: https://scrutinizer-ci.com/g/swisnl/guzzle-bugsnag-breadcrumbs-middleware
 [link-downloads]: https://packagist.org/packages/swisnl/guzzle-bugsnag-breadcrumbs-middleware
 [link-treeware]: https://plant.treeware.earth/swisnl/guzzle-bugsnag-breadcrumbs-middleware
-[link-author]: https://github.com/swisnl
+[link-author]: https://github.com/JaZo
 [link-contributors]: ../../contributors
 [link-swis]: https://www.swis.nl
