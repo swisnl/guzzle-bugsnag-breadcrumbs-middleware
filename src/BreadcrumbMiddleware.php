@@ -26,7 +26,7 @@ class BreadcrumbMiddleware
     /**
      * @param \Bugsnag\Client $bugsnag         your (preconfigured) Bugsnag client
      * @param string          $name            the name of the breadcrumb
-     * @param array           $redactedStrings a list o secret strings, such as API keys, that should be filtered out of the metadata
+     * @param array           $redactedStrings a list of secret strings, such as API keys, that should be filtered out of the metadata
      * @param int|null        $truncateBodyAt  the length of the response body summary, which is added to the breadcrumb in case of client or server exceptions
      */
     public function __construct(
