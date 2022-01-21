@@ -20,11 +20,13 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "bugsnag/bugsnag": "^3.20",
+        "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
-        "phpunit/phpunit" : ">=9.0"
+        "phpunit/phpunit" : ">=9.5"
     },
     "autoload": {
         "psr-4": {

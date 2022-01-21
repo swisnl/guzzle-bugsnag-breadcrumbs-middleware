@@ -22,8 +22,16 @@ $ composer require swisnl/guzzle-bugsnag-breadcrumbs-middleware
 ## Usage
 
 ``` php
-$skeleton = new Swis\Guzzle\Bugsnag();
-echo $skeleton->echoPhrase('Hello, League!');
+use Bugsnag\Client as Bugsnag;
+use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\HandlerStack;
+use Swis\Guzzle\Bugsnag\BreadcrumbMiddleware;
+
+$bugsnag = Bugsnag::make();
+
+$stack = HandlerStack::create();
+$stack->push(new BreadcrumbMiddleware($bugsnag));
+$client = new Guzzle(['handler' => $stack]);
 ```
 
 ## Change log
