@@ -4,19 +4,7 @@ All notable changes to `swisnl/guzzle-bugsnag-breadcrumbs-middleware` will be do
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## Unreleased
 
 ### Added
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+- Added factory method to easily create the middleware when using Laravel.

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swis\Guzzle\Bugsnag;
 
 use Bugsnag\Breadcrumbs\Breadcrumb;
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Bugsnag\Client;
 use GuzzleHttp\BodySummarizerInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -12,6 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use RuntimeException;
 
 class BreadcrumbMiddleware
 {
@@ -39,6 +41,22 @@ class BreadcrumbMiddleware
         $this->name = $name;
         $this->redactedStrings = $redactedStrings;
         $this->bodySummarizer = $truncateBodyAt ? new BodySummarizer($truncateBodyAt) : null;
+    }
+
+    /**
+     * Create a new instance using the Bugsnag facade.
+     *
+     * @param mixed ...$arguments
+     *
+     * @return self
+     */
+    public static function fromFacade(...$arguments): self
+    {
+        if (!class_exists(Bugsnag::class)) {
+            throw new RuntimeException('Creating the middleware from the Bugsnag facade requires Laravel and the bugsnag/bugsnag-laravel package.');
+        }
+
+        return new self(Bugsnag::getFacadeRoot(), ...$arguments);
     }
 
     /**

@@ -44,20 +44,24 @@ Now when you send a request, a Bugsnag breadcrumb is logged with the following m
 * response body (summary), in case of client or server exceptions (status code >= 400)
 * duration
 
-### Config
+### Laravel
+
+Using Laravel? Simply use the factory method to create the middleware from the Bugsnag facade: `BreadcrumbMiddleware::fromFacade()`.
+
+## Config
 
 You can configure the middleware using the constructor arguments:
 
-#### `$bugsnag`
+### `$bugsnag`
 Your (preconfigured) Bugsnag client.
 
-#### `$name`
+### `$name`
 The name of the breadcrumb.
 
-#### `$redactedStrings`
+### `$redactedStrings`
 A list of secret strings, such as API keys, that should be filtered out of the metadata.
 
-#### `$truncateBodyAt`
+### `$truncateBodyAt`
 The length of the response body summary, which is added to the breadcrumb in case of client or server exceptions. Use null to disable logging response/request body.
 
 By default, it does not log the request body and only logs the response body in case of client or server exceptions (status code >= 400). If you'd like to change this behaviour, you can provide your own `GuzzleHttp\BodySummarizerInterface` implementation. You can use the default `GuzzleHttp\BodySummarizer` for example, to log all request and response bodies. Please be aware not to log sensitive information!

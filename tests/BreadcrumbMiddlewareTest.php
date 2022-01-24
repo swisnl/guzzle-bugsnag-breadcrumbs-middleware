@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Swis\Guzzle\Bugsnag\Tests;
 
 use Bugsnag\Breadcrumbs\Breadcrumb;
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Bugsnag\Client;
 use GuzzleHttp\BodySummarizerInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -340,5 +341,18 @@ class BreadcrumbMiddlewareTest extends TestCase
 
         // assert
         // see expectations
+    }
+
+    public function testItCanBeCreatedFromFacade(): void
+    {
+        // arrange
+        $bugsnag = $this->createMock(Client::class);
+        Bugsnag::swap($bugsnag);
+
+        // act
+        $middleware = BreadcrumbMiddleware::fromFacade();
+
+        // assert
+        $this->assertInstanceOf(BreadcrumbMiddleware::class, $middleware);
     }
 }
