@@ -18,7 +18,7 @@ This is a [middleware](https://docs.guzzlephp.org/en/stable/handlers-and-middlew
 Via Composer
 
 ``` bash
-$ composer require swisnl/guzzle-bugsnag-breadcrumbs-middleware
+composer require swisnl/guzzle-bugsnag-breadcrumbs-middleware
 ```
 
 ## Usage
